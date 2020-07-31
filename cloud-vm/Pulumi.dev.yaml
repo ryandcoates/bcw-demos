@@ -1,2 +1,3 @@
 config:
   azure:location: WestUS2
+  azure:tag: Dev
