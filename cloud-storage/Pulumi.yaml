@@ -1,0 +1,3 @@
+name: cloud-storage
+runtime: dotnet
+description: Simple cloud storage with static site demo
