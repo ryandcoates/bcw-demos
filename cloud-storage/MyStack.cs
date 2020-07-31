@@ -45,6 +45,6 @@ class MyStack : Stack
         this.StaticEndpoint = storageAccount.PrimaryWebEndpoint;
     }
 
-    [Output] public Output<string> ConnectionString { get; set; }
+    // [Output] public Output<string> ConnectionString { get; set; }
     [Output] public Output<string> StaticEndpoint { get; set; }
 }
