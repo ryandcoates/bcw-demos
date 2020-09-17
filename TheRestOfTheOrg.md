@@ -73,21 +73,31 @@ Software Architecture, top of the pile? Fork in the road? Path to riches? Archit
 
 # What’s a pipeline, why do I want one?
 
+Pipelines! Some say they are all it takes to do the DevOps, some say YAML exists solely to taunt pipeline admins, but what are they, and why do they matter to devs?
+
 ---
 
 # Automating all the things, for real though
+
+As devs we have an innate need to be lazy, automating all the things can help with that, where to start? Lets go through some automation scenarios to save you time and decrease errors.
 
 ---
 
 # Stop using CMD!
 
+I don’t know why Jake still uses CMD for everything, but you should stop! Lets talk about the fully Turing complete scripting language and shell built into windows for the last ten years, and now cross-platform!
+
 ---
 
 # Chocolatey, the Windows Package manager
 
+How fun was it installing all those packages at the start of class? Let me introduce you to binary package management in Windows with Chocolatey, and never sweat toolchain installation again.
+
 ---
 
 # The Cloud: Storm coming? Or just a bit of drizzle
+
+Increase your salary and decrease your IT spend by putting the word cloud somewhere in your company manifesto! But seriously, the Cloud has changed the way we develop applications and deploy services, lets talk about it and introduce you to some of its pros and cons
 
 ---
 
