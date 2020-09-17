@@ -51,7 +51,7 @@ class MyStack : Stack
         {
             ResourceGroupName = resourceGroup.Name,
             Location = resourceGroup.Location,
-            Size = "Standard_B1ms",
+            Size = "Standard_B1ms", //Standard_D2s_v3
             AdminUsername = "install",
             AdminPassword = "P@$$w0rd1234!",
             NetworkInterfaceIds = 
