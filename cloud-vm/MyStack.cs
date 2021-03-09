@@ -7,7 +7,7 @@ class MyStack : Stack
     public MyStack()
     {
         // Create an Azure Resource Group
-        var resourceGroup = new ResourceGroup("bcw-july20-vm");
+        var resourceGroup = new ResourceGroup("bcw-mar21-vm");
 
         // Create a Virtual network
         var virtualNetwork = new Azure.Network.VirtualNetwork("bcw-vnet", new Azure.Network.VirtualNetworkArgs
@@ -23,7 +23,7 @@ class MyStack : Stack
         {
             ResourceGroupName = resourceGroup.Name,
             VirtualNetworkName = virtualNetwork.Name,
-            AddressPrefix = "10.0.2.0/24",
+            AddressPrefixes = "10.0.2.0/24",
         });
         var publicIpAddress = new Azure.Network.PublicIp("publicIp", new Azure.Network.PublicIpArgs
         {
@@ -51,7 +51,7 @@ class MyStack : Stack
         {
             ResourceGroupName = resourceGroup.Name,
             Location = resourceGroup.Location,
-            Size = "Standard_B1ms", //Standard_D2s_v3
+            Size = "Standard_B1ms", // Standard_B1ms | Standard_D2s_v3
             AdminUsername = "install",
             AdminPassword = "P@$$w0rd1234!",
             NetworkInterfaceIds = 
