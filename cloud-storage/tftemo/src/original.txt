@@ -1,0 +1,6 @@
+<html>
+<body>
+    <h1>Congratulations Boise Codeworks Graduates</h1>
+    <h3>Static Site demo with Azure storage accounts and Infrastructure as Code via Terraform</h3>
+</body>
+</html>

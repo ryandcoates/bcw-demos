@@ -1,0 +1,3 @@
+config:
+  azure:location: WestUS2
+  subscriptionId: 0f742d4d-18f7-43ad-b56c-6c77e9170a78
