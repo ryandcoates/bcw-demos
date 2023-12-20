@@ -1,0 +1,4 @@
+config:
+  aws:region: us-west-2
+  bcw-demos-cloud-vm:instanceType: t3.micro
+  bcw-demos-cloud-vm:vpcNetworkCidr: 10.0.0.0/16
