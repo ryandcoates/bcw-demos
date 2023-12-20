@@ -1,0 +1,303 @@
+{
+    "version": 3,
+    "deployment": {
+        "manifest": {
+            "time": "2021-09-20T13:54:57.351349-06:00",
+            "magic": "b9252cabf480c88f281e0d29a10d6b8889ddc9fcbc466d4f9374c0fb69b330b8",
+            "version": "v3.12.0"
+        },
+        "secrets_providers": {
+            "type": "service",
+            "state": {
+                "url": "https://api.pulumi.com",
+                "owner": "ryandcoates",
+                "project": "cloud-vm",
+                "stack": "dev"
+            }
+        },
+        "resources": [
+            {
+                "urn": "urn:pulumi:dev::cloud-vm::pulumi:pulumi:Stack::cloud-vm-dev",
+                "custom": false,
+                "type": "pulumi:pulumi:Stack",
+                "outputs": {
+                    "publicIpAddress": ""
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::cloud-vm::pulumi:providers:azure::default_4_18_0",
+                "custom": true,
+                "id": "5fbd23c6-5f1c-4800-93d8-9fcc94a1445e",
+                "type": "pulumi:providers:azure",
+                "inputs": {
+                    "location": "WestUS2",
+                    "version": "4.18.0"
+                },
+                "outputs": {
+                    "location": "WestUS2",
+                    "version": "4.18.0"
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::cloud-vm::azure:core/resourceGroup:ResourceGroup::bcw-mar21-vm",
+                "custom": true,
+                "id": "/subscriptions/49cc73af-5921-424a-a796-6f54c39c1871/resourceGroups/bcw-mar21-vmbb36dd74",
+                "type": "azure:core/resourceGroup:ResourceGroup",
+                "inputs": {
+                    "__defaults": [
+                        "location",
+                        "name"
+                    ],
+                    "location": "WestUS2",
+                    "name": "bcw-mar21-vmbb36dd74"
+                },
+                "outputs": {
+                    "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":5400000000000,\"delete\":5400000000000,\"read\":300000000000,\"update\":5400000000000}}",
+                    "id": "/subscriptions/49cc73af-5921-424a-a796-6f54c39c1871/resourceGroups/bcw-mar21-vmbb36dd74",
+                    "location": "westus2",
+                    "name": "bcw-mar21-vmbb36dd74",
+                    "tags": {}
+                },
+                "parent": "urn:pulumi:dev::cloud-vm::pulumi:pulumi:Stack::cloud-vm-dev",
+                "provider": "urn:pulumi:dev::cloud-vm::pulumi:providers:azure::default_4_18_0::5fbd23c6-5f1c-4800-93d8-9fcc94a1445e"
+            },
+            {
+                "urn": "urn:pulumi:dev::cloud-vm::azure:network/publicIp:PublicIp::publicIp",
+                "custom": true,
+                "id": "/subscriptions/49cc73af-5921-424a-a796-6f54c39c1871/resourceGroups/bcw-mar21-vmbb36dd74/providers/Microsoft.Network/publicIPAddresses/publicip1335a4cf",
+                "type": "azure:network/publicIp:PublicIp",
+                "inputs": {
+                    "__defaults": [
+                        "idleTimeoutInMinutes",
+                        "ipVersion",
+                        "name",
+                        "sku",
+                        "skuTier"
+                    ],
+                    "allocationMethod": "Dynamic",
+                    "idleTimeoutInMinutes": 4,
+                    "ipVersion": "IPv4",
+                    "location": "westus2",
+                    "name": "publicip1335a4cf",
+                    "resourceGroupName": "bcw-mar21-vmbb36dd74",
+                    "sku": "Basic",
+                    "skuTier": "Regional"
+                },
+                "outputs": {
+                    "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1800000000000,\"delete\":1800000000000,\"read\":300000000000,\"update\":1800000000000}}",
+                    "allocationMethod": "Dynamic",
+                    "availabilityZone": "No-Zone",
+                    "id": "/subscriptions/49cc73af-5921-424a-a796-6f54c39c1871/resourceGroups/bcw-mar21-vmbb36dd74/providers/Microsoft.Network/publicIPAddresses/publicip1335a4cf",
+                    "idleTimeoutInMinutes": 4,
+                    "ipAddress": "",
+                    "ipTags": {},
+                    "ipVersion": "IPv4",
+                    "location": "westus2",
+                    "name": "publicip1335a4cf",
+                    "resourceGroupName": "bcw-mar21-vmbb36dd74",
+                    "sku": "Basic",
+                    "skuTier": "Regional",
+                    "tags": {},
+                    "zones": null
+                },
+                "parent": "urn:pulumi:dev::cloud-vm::pulumi:pulumi:Stack::cloud-vm-dev",
+                "dependencies": [
+                    "urn:pulumi:dev::cloud-vm::azure:core/resourceGroup:ResourceGroup::bcw-mar21-vm"
+                ],
+                "provider": "urn:pulumi:dev::cloud-vm::pulumi:providers:azure::default_4_18_0::5fbd23c6-5f1c-4800-93d8-9fcc94a1445e",
+                "propertyDependencies": {
+                    "allocationMethod": null,
+                    "location": [
+                        "urn:pulumi:dev::cloud-vm::azure:core/resourceGroup:ResourceGroup::bcw-mar21-vm"
+                    ],
+                    "resourceGroupName": [
+                        "urn:pulumi:dev::cloud-vm::azure:core/resourceGroup:ResourceGroup::bcw-mar21-vm"
+                    ]
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::cloud-vm::azure:network/virtualNetwork:VirtualNetwork::bcw-vnet",
+                "custom": true,
+                "id": "/subscriptions/49cc73af-5921-424a-a796-6f54c39c1871/resourceGroups/bcw-mar21-vmbb36dd74/providers/Microsoft.Network/virtualNetworks/bcw-vnetb18afb89",
+                "type": "azure:network/virtualNetwork:VirtualNetwork",
+                "inputs": {
+                    "__defaults": [
+                        "name"
+                    ],
+                    "addressSpaces": [
+                        "10.0.0.0/16"
+                    ],
+                    "location": "westus2",
+                    "name": "bcw-vnetb18afb89",
+                    "resourceGroupName": "bcw-mar21-vmbb36dd74"
+                },
+                "outputs": {
+                    "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1800000000000,\"delete\":1800000000000,\"read\":300000000000,\"update\":1800000000000}}",
+                    "addressSpaces": [
+                        "10.0.0.0/16"
+                    ],
+                    "bgpCommunity": "",
+                    "ddosProtectionPlan": null,
+                    "dnsServers": [],
+                    "guid": "3cc89ab4-959f-41e2-948b-4e1674e52289",
+                    "id": "/subscriptions/49cc73af-5921-424a-a796-6f54c39c1871/resourceGroups/bcw-mar21-vmbb36dd74/providers/Microsoft.Network/virtualNetworks/bcw-vnetb18afb89",
+                    "location": "westus2",
+                    "name": "bcw-vnetb18afb89",
+                    "resourceGroupName": "bcw-mar21-vmbb36dd74",
+                    "subnets": [],
+                    "tags": {},
+                    "vmProtectionEnabled": false
+                },
+                "parent": "urn:pulumi:dev::cloud-vm::pulumi:pulumi:Stack::cloud-vm-dev",
+                "dependencies": [
+                    "urn:pulumi:dev::cloud-vm::azure:core/resourceGroup:ResourceGroup::bcw-mar21-vm"
+                ],
+                "provider": "urn:pulumi:dev::cloud-vm::pulumi:providers:azure::default_4_18_0::5fbd23c6-5f1c-4800-93d8-9fcc94a1445e",
+                "propertyDependencies": {
+                    "addressSpaces": null,
+                    "location": [
+                        "urn:pulumi:dev::cloud-vm::azure:core/resourceGroup:ResourceGroup::bcw-mar21-vm"
+                    ],
+                    "resourceGroupName": [
+                        "urn:pulumi:dev::cloud-vm::azure:core/resourceGroup:ResourceGroup::bcw-mar21-vm"
+                    ]
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::cloud-vm::azure:network/subnet:Subnet::subnet",
+                "custom": true,
+                "id": "/subscriptions/49cc73af-5921-424a-a796-6f54c39c1871/resourceGroups/bcw-mar21-vmbb36dd74/providers/Microsoft.Network/virtualNetworks/bcw-vnetb18afb89/subnets/subnet091bd210",
+                "type": "azure:network/subnet:Subnet",
+                "inputs": {
+                    "__defaults": [
+                        "enforcePrivateLinkEndpointNetworkPolicies",
+                        "enforcePrivateLinkServiceNetworkPolicies",
+                        "name"
+                    ],
+                    "addressPrefixes": [
+                        "10.0.2.0/24"
+                    ],
+                    "enforcePrivateLinkEndpointNetworkPolicies": false,
+                    "enforcePrivateLinkServiceNetworkPolicies": false,
+                    "name": "subnet091bd210",
+                    "resourceGroupName": "bcw-mar21-vmbb36dd74",
+                    "virtualNetworkName": "bcw-vnetb18afb89"
+                },
+                "outputs": {
+                    "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1800000000000,\"delete\":1800000000000,\"read\":300000000000,\"update\":1800000000000}}",
+                    "addressPrefix": "10.0.2.0/24",
+                    "addressPrefixes": [
+                        "10.0.2.0/24"
+                    ],
+                    "delegations": [],
+                    "enforcePrivateLinkEndpointNetworkPolicies": false,
+                    "enforcePrivateLinkServiceNetworkPolicies": false,
+                    "id": "/subscriptions/49cc73af-5921-424a-a796-6f54c39c1871/resourceGroups/bcw-mar21-vmbb36dd74/providers/Microsoft.Network/virtualNetworks/bcw-vnetb18afb89/subnets/subnet091bd210",
+                    "name": "subnet091bd210",
+                    "resourceGroupName": "bcw-mar21-vmbb36dd74",
+                    "serviceEndpointPolicyIds": [],
+                    "serviceEndpoints": [],
+                    "virtualNetworkName": "bcw-vnetb18afb89"
+                },
+                "parent": "urn:pulumi:dev::cloud-vm::pulumi:pulumi:Stack::cloud-vm-dev",
+                "dependencies": [
+                    "urn:pulumi:dev::cloud-vm::azure:core/resourceGroup:ResourceGroup::bcw-mar21-vm",
+                    "urn:pulumi:dev::cloud-vm::azure:network/virtualNetwork:VirtualNetwork::bcw-vnet"
+                ],
+                "provider": "urn:pulumi:dev::cloud-vm::pulumi:providers:azure::default_4_18_0::5fbd23c6-5f1c-4800-93d8-9fcc94a1445e",
+                "propertyDependencies": {
+                    "addressPrefixes": null,
+                    "resourceGroupName": [
+                        "urn:pulumi:dev::cloud-vm::azure:core/resourceGroup:ResourceGroup::bcw-mar21-vm"
+                    ],
+                    "virtualNetworkName": [
+                        "urn:pulumi:dev::cloud-vm::azure:network/virtualNetwork:VirtualNetwork::bcw-vnet"
+                    ]
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::cloud-vm::azure:network/networkInterface:NetworkInterface::networkInterface",
+                "custom": true,
+                "id": "/subscriptions/49cc73af-5921-424a-a796-6f54c39c1871/resourceGroups/bcw-mar21-vmbb36dd74/providers/Microsoft.Network/networkInterfaces/networkinterface6a42853b",
+                "type": "azure:network/networkInterface:NetworkInterface",
+                "inputs": {
+                    "__defaults": [
+                        "enableAcceleratedNetworking",
+                        "enableIpForwarding",
+                        "name"
+                    ],
+                    "enableAcceleratedNetworking": false,
+                    "enableIpForwarding": false,
+                    "ipConfigurations": [
+                        {
+                            "__defaults": [
+                                "privateIpAddressVersion"
+                            ],
+                            "name": "internal",
+                            "privateIpAddressAllocation": "Dynamic",
+                            "privateIpAddressVersion": "IPv4",
+                            "publicIpAddressId": "/subscriptions/49cc73af-5921-424a-a796-6f54c39c1871/resourceGroups/bcw-mar21-vmbb36dd74/providers/Microsoft.Network/publicIPAddresses/publicip1335a4cf",
+                            "subnetId": "/subscriptions/49cc73af-5921-424a-a796-6f54c39c1871/resourceGroups/bcw-mar21-vmbb36dd74/providers/Microsoft.Network/virtualNetworks/bcw-vnetb18afb89/subnets/subnet091bd210"
+                        }
+                    ],
+                    "location": "westus2",
+                    "name": "networkinterface6a42853b",
+                    "resourceGroupName": "bcw-mar21-vmbb36dd74"
+                },
+                "outputs": {
+                    "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1800000000000,\"delete\":1800000000000,\"read\":300000000000,\"update\":1800000000000}}",
+                    "appliedDnsServers": [],
+                    "dnsServers": [],
+                    "enableAcceleratedNetworking": false,
+                    "enableIpForwarding": false,
+                    "id": "/subscriptions/49cc73af-5921-424a-a796-6f54c39c1871/resourceGroups/bcw-mar21-vmbb36dd74/providers/Microsoft.Network/networkInterfaces/networkinterface6a42853b",
+                    "internalDnsNameLabel": "",
+                    "internalDomainNameSuffix": "wsnmqpe5sxredfeljylhjzjcrb.xx.internal.cloudapp.net",
+                    "ipConfigurations": [
+                        {
+                            "name": "internal",
+                            "primary": true,
+                            "privateIpAddress": "10.0.2.4",
+                            "privateIpAddressAllocation": "Dynamic",
+                            "privateIpAddressVersion": "IPv4",
+                            "publicIpAddressId": "/subscriptions/49cc73af-5921-424a-a796-6f54c39c1871/resourceGroups/bcw-mar21-vmbb36dd74/providers/Microsoft.Network/publicIPAddresses/publicip1335a4cf",
+                            "subnetId": "/subscriptions/49cc73af-5921-424a-a796-6f54c39c1871/resourceGroups/bcw-mar21-vmbb36dd74/providers/Microsoft.Network/virtualNetworks/bcw-vnetb18afb89/subnets/subnet091bd210"
+                        }
+                    ],
+                    "location": "westus2",
+                    "macAddress": "",
+                    "name": "networkinterface6a42853b",
+                    "privateIpAddress": "10.0.2.4",
+                    "privateIpAddresses": [
+                        "10.0.2.4"
+                    ],
+                    "resourceGroupName": "bcw-mar21-vmbb36dd74",
+                    "tags": {},
+                    "virtualMachineId": ""
+                },
+                "parent": "urn:pulumi:dev::cloud-vm::pulumi:pulumi:Stack::cloud-vm-dev",
+                "dependencies": [
+                    "urn:pulumi:dev::cloud-vm::azure:core/resourceGroup:ResourceGroup::bcw-mar21-vm",
+                    "urn:pulumi:dev::cloud-vm::azure:network/publicIp:PublicIp::publicIp",
+                    "urn:pulumi:dev::cloud-vm::azure:network/subnet:Subnet::subnet"
+                ],
+                "provider": "urn:pulumi:dev::cloud-vm::pulumi:providers:azure::default_4_18_0::5fbd23c6-5f1c-4800-93d8-9fcc94a1445e",
+                "propertyDependencies": {
+                    "ipConfigurations": [
+                        "urn:pulumi:dev::cloud-vm::azure:network/publicIp:PublicIp::publicIp",
+                        "urn:pulumi:dev::cloud-vm::azure:network/subnet:Subnet::subnet"
+                    ],
+                    "location": [
+                        "urn:pulumi:dev::cloud-vm::azure:core/resourceGroup:ResourceGroup::bcw-mar21-vm"
+                    ],
+                    "resourceGroupName": [
+                        "urn:pulumi:dev::cloud-vm::azure:core/resourceGroup:ResourceGroup::bcw-mar21-vm"
+                    ]
+                }
+            }
+        ],
+        "pending_operations": [
+            
+        ]
+    }
+}
