@@ -1,6 +1,8 @@
 ---
 marp: true
-theme: test
+theme:
+html: true
+size: 16:9
 ---
 
 # What about rest of the org?

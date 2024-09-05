@@ -1,4 +1,5 @@
 /* @theme test */
+@import 'default';
 
 section {
     background-color: #1c1c1c;
