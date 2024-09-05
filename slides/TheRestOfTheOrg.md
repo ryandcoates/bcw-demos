@@ -1,7 +1,6 @@
 ---
 marp: true
-theme:
-html: true
+theme: custom
 size: 16:9
 ---
 
