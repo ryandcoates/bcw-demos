@@ -2,3 +2,4 @@ config:
   aws:region: us-west-2
   bcw-demos-cloud-vm:instanceType: t3.micro
   bcw-demos-cloud-vm:vpcNetworkCidr: 10.0.0.0/16
+encryptionsalt: v1:ytBOjUVgNrQ=:v1:r83vqg5SvM+DxjeD:KsGSiDTdxJmtQ6b7k2WkAPdnJ7EdEg==
